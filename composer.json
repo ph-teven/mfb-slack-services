@@ -1,0 +1,33 @@
+{
+  "name": "mfb/slack-reactor",
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Stefan Beier",
+      "email": "stefan.beier@meinfernbus.de"
+    }
+  ],
+  "require": {
+    "cilex/cilex": "*",
+    "react/react": "*",
+    "symfony/yaml": "2.6.*",
+    "m4tthumphrey/php-gitlab-api": "dev-master",
+    "cpliakas/git-wrapper": "~1.0",
+    "guzzlehttp/guzzle": "~5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MFB\\SlackReactor\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MFB\\SlackReactor\\Test\\": "test/"
+    }
+  }
+}
