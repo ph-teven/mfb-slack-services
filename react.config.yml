@@ -6,4 +6,7 @@ settings:
             menu_1: # wandel tends to change their file format...
                 - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1-KW-%s.pdf
                 - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel1-KW-%s.pdf
+                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1KW-%s-.pdf
+                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1KW-%s.pdf
+                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1KW%s.pdf
             slack_token: ~
