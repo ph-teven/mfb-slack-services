@@ -9,4 +9,5 @@ settings:
                 - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1KW-%s-.pdf
                 - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1KW-%s.pdf
                 - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1KW%s.pdf
+                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1-KW%s-.pdf
             slack_token: ~
