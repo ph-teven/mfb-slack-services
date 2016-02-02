@@ -5,6 +5,8 @@
 namespace MFB\SlackReactor\Command;
 
 use Cilex\Command\Command;
+use DOMDocument;
+use DOMXPath;
 use React\EventLoop\Factory;
 use React\Http\Request;
 use React\Http\Response;
@@ -93,22 +95,13 @@ class WandelMenuCommand extends Command
                     return;
                 }
 
-                // Check valid url format.
-                $wandelMenuUrl = null;
-                foreach ($wandelSettings['menu_1'] as $menuFormat) {
-                    $wandelMenuUrl = sprintf($menuFormat, date('W'));
-                    if (file_get_contents($wandelMenuUrl)) {
-                        break;
-                    }
-                }
-
-                // No menu? well then there is nothing here.
-                if ($wandelMenuUrl == null) {
-                    $response->writeHead(404);
-                    $response->end();
-
-                    return;
-                }
+                // All the credits to @alberteddu for this!
+                $a = file_get_contents($wandelSettings['wandel_1']);
+                $b = new DOMDocument;
+                $b->loadHTML($a);
+                $c             = new DOMXPath($b);
+                $e             = $c->query('//*[@id="m3"]/ul/li/ul/li/span/a/@href');
+                $wandelMenuUrl = 'http://www.wandel-restaurant.de/' . $e->item(0)->nodeValue;
 
                 $responseText    = $wandelMenuUrl . ' - Brought you by horriblesolutions.com';
                 $payload         = json_encode(['text' => $responseText]);

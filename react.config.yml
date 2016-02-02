@@ -3,12 +3,5 @@ settings:
         wandel:
             host: 0.0.0.0
             port: 1337
-            menu_1: # wandel tends to change their file format...
-                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1-KW-%s.pdf
-                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel1-KW-%s.pdf
-                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1KW-%s-.pdf
-                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1KW-%s.pdf
-                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1KW%s.pdf
-                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1-KW%s-.pdf
-                - http://www.wandel-restaurant.de/media/downloads/Mittagskarte-Wandel-1-KW-%s-.pdf
+            wandel_1: "http://www.wandel-restaurant.de/restaurants/bernhard-weiss-str/wandel8/start.html"
             slack_token: ~
