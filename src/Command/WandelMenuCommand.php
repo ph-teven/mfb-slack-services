@@ -88,8 +88,6 @@ class WandelMenuCommand extends Command
                         $response->writeHead(200);
                         $response->end($payload);
                         $spamWarningSent = true;
-
-                        return;
                     }
 
                     return;
