@@ -96,7 +96,7 @@ class WandelMenuCommand extends Command
                 // Check valid url format.
                 $wandelMenuUrl = null;
                 foreach ($wandelSettings['menu_1'] as $menuFormat) {
-                    $wandelMenuUrl = sprintf($menuFormat, date('W'));
+                    $wandelMenuUrl = sprintf($menuFormat, date('W'), date('o'));
                     if (file_get_contents($wandelMenuUrl)) {
                         break;
                     }
