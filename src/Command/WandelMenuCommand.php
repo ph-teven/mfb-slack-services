@@ -101,7 +101,7 @@ class WandelMenuCommand extends Command
                 $b->loadHTML($a);
                 $c             = new DOMXPath($b);
                 $e             = $c->query('//a[contains(@href,\'fileadmin\')]/@href');
-                $wandelMenuUrl = 'https://www.wandel-restaurant.de/' . $e->item(0)->nodeValue;
+                $wandelMenuUrl = 'https://www.wandel-restaurant.de' . $e->item(0)->nodeValue;
 
                 $responseText    = $wandelMenuUrl . ' - Brought you by horriblesolutions.com';
                 $payload         = json_encode(['text' => $responseText]);
