@@ -95,13 +95,9 @@ class WandelMenuCommand extends Command
                     return;
                 }
 
-                // All the credits to @alberteddu for this!
-                $a = file_get_contents($wandelSettings['wandel_1']);
-                $b = new DOMDocument;
-                $b->loadHTML($a);
-                $c             = new DOMXPath($b);
-                $e             = $c->query('//a[contains(@href,\'fileadmin\')]/@href');
-                $wandelMenuUrl = 'https://www.wandel-restaurant.de' . $e->item(0)->nodeValue;
+                $source = file_get_contents($wandelSettings['wandel_1']);
+                $match = preg_match('/<a href\=\"(\/fileadmin.+?(?=pdf)pdf)/', $source, $matches);
+                $wandelMenuUrl = 'https://www.wandel-restaurant.de' . $matches[1];
 
                 $responseText    = $wandelMenuUrl . ' - Brought you by horriblesolutions.com';
                 $payload         = json_encode(['text' => $responseText]);
