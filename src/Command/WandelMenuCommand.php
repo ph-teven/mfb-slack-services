@@ -95,7 +95,13 @@ class WandelMenuCommand extends Command
                     return;
                 }
 
-                $source = file_get_contents($wandelSettings['wandel_1']);
+                $source = file_get_contents(
+                    $wandelSettings['wandel_1'],
+                    false,
+                    stream_context_create([
+                        'ssl' => ['verify_peer' => false],
+                    ])
+                );
                 $match = preg_match('/<a href\=\"(\/fileadmin.+?(?=pdf)pdf)/', $source, $matches);
                 $wandelMenuUrl = 'https://www.wandel-restaurant.de' . $matches[1];
 
